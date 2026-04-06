@@ -1,0 +1,14 @@
+# Railway deployment config — for the Express backend
+# Deploy this project to https://railway.app and set env vars there
+
+[build]
+builder = "nixpacks"
+buildCommand = "npm install"
+
+[deploy]
+startCommand = "node server/index.js"
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
+
+[[services]]
+name = "geointel-server"
